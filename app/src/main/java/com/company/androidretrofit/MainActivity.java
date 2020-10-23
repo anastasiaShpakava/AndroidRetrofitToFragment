@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-  private RestClient restClient = new RestClient(this);
+  //private RestClient restClient = new RestClient(this);
 
 
     @Override
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-   restClient.start();
+  // restClient.start();
 
     }
 }

@@ -12,7 +12,7 @@
     <fragment
         android:id="@+id/fragment"
         android:name="com.company.androidretrofit.NameFragment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:layout="@layout/name_fragment"/>
