@@ -8,18 +8,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
     private LayoutInflater inflater;
-    private List<Source> sources;
-   static NameFragment nameFragment = new NameFragment();
+    static List<Source> sources;
 
-    public NewsAdapter(List<Source> sources) {
-        this.sources = sources;
-    }
 
     public NewsAdapter(Context context, List<Source> sources) {
         this.sources = sources;
@@ -62,8 +60,29 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             sourceCategory = view.findViewById(R.id.sourceCategory);
             sourceLanguage = view.findViewById(R.id.sourceLanguage);
             sourceCountry = view.findViewById(R.id.sourceCountry);
-
-
+//
+//            String idSource = sourceId.getText().toString();
+//            String descriptionSource = sourceDescription.getText().toString();
+//            String urlSource = sourceURL.getText().toString();
+//            String categorySource = sourceCategory.getText().toString();
+//            String languageSource = sourceLanguage.getText().toString();
+//            String countrySource = sourceCountry.getText().toString();
+//
+//
+//            Bundle bundle = new Bundle();
+//
+//            bundle.putString("sourceId", idSource);
+//            bundle.putString("sourceDescription", descriptionSource);
+//            bundle.putString("sourceURL", urlSource);
+//            bundle.putString("sourceCategory", categorySource);
+//            bundle.putString("sourceLanguage", languageSource);
+//            bundle.putString("sourceCountry", countrySource);
+//
+//            NameFragment newsFragment = new NameFragment();
+//            newsFragment.setArguments(bundle);
+//
+//            AppCompatActivity activity = (AppCompatActivity) view.getContext();
+//            activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, newsFragment).addToBackStack(null).commit();
         }
     }
 }

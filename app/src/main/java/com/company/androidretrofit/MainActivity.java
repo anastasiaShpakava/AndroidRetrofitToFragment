@@ -1,13 +1,11 @@
 package com.company.androidretrofit;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-  private Controller controller = new Controller(this);
+  private RestClient restClient = new RestClient(this);
 
 
     @Override
@@ -18,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-   controller.start();
+   restClient.start();
 
     }
 }

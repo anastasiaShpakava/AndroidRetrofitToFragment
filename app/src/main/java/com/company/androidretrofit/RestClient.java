@@ -1,6 +1,7 @@
 package com.company.androidretrofit;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -26,16 +27,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Controller implements Callback<Source> {
+public class RestClient implements Callback <Source> {
     private static final String BASE_URL = "https://newsapi.org/v2/";
     private static final String API_KEY = "39f328d281294c998df37ec5b9d04305";
 
     private ApiInterface apiInterface;
     private MainActivity mainActivity;
-    private RecyclerView recyclerView;
-    List<Source> sources = new ArrayList<>();
-
-    public Controller(MainActivity mainActivity) {
+    public RestClient(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
     }
 
@@ -69,9 +67,8 @@ public class Controller implements Callback<Source> {
 
     @Override
     public void onResponse(Call<Source> call, Response<Source> response) {
-        Source source= response.body();
 
-
+        Source source = response.body();
         String sourceName = source.getName();
         Bundle bundle = new Bundle();
         bundle.putString("sourceName", sourceName);
@@ -90,4 +87,3 @@ public class Controller implements Callback<Source> {
         Log.d("error", "can't parse data: ", t);
     }
 }
-
