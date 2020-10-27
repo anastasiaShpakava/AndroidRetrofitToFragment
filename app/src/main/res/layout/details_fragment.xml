@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/sourceDescription"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="normal"  />
 
         <TextView
             android:id="@+id/sourceURL"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="normal"  />
 
         <TextView
             android:id="@+id/sourceCategory"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/sourceLanguage"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="normal"  />
 
         <TextView
             android:id="@+id/sourceCountry"
@@ -59,6 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="normal"  />
     </LinearLayout>
 </FrameLayout>

@@ -26,6 +26,12 @@ public class NewsFragment extends Fragment {
     private String sourceCategory;
     private String sourceLanguage;
     private String sourceCountry;
+    private TextView textName;
+    private TextView textUrl;
+    private TextView textDescription;
+    private TextView textCategory;
+    private TextView textLanguage;
+    private TextView textCountry;
 
     public NewsFragment() {
     }
@@ -35,12 +41,12 @@ public class NewsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.details_fragment, container, false);
-        TextView textName = view.findViewById(R.id.sourceName);
-        TextView textUrl = view.findViewById(R.id.sourceURL);
-        TextView textDescription = view.findViewById(R.id.sourceDescription);
-        TextView textCategory = view.findViewById(R.id.sourceCategory);
-        TextView textLanguage = view.findViewById(R.id.sourceLanguage);
-        TextView textCountry = view.findViewById(R.id.sourceCountry);
+        textName = view.findViewById(R.id.sourceName);
+        textUrl = view.findViewById(R.id.sourceURL);
+        textDescription = view.findViewById(R.id.sourceDescription);
+        textCategory = view.findViewById(R.id.sourceCategory);
+        textLanguage = view.findViewById(R.id.sourceLanguage);
+        textCountry = view.findViewById(R.id.sourceCountry);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             sourceName = bundle.getString("sourceName");
@@ -89,11 +95,23 @@ public class NewsFragment extends Fragment {
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
-//        if (item.getItemId() == R.id.zoomIn) {
-//            container.size
-//        } else {
-//            textView.setTextSize(20);
-//        }
+
+        if (item.getItemId() == R.id.zoomIn) {
+            textName.setTextAppearance(getContext(), R.style.boldText);
+            textCategory.setTextAppearance(getContext(), R.style.boldText);
+            textCountry.setTextAppearance(getContext(), R.style.boldText);
+            textDescription.setTextAppearance(getContext(), R.style.boldText);
+            textLanguage.setTextAppearance(getContext(), R.style.boldText);
+            textUrl.setTextAppearance(getContext(), R.style.boldText);
+        } else {
+            textName.setTextAppearance(getContext(), R.style.normalText);
+            textCategory.setTextAppearance(getContext(), R.style.normalText);
+            textCountry.setTextAppearance(getContext(), R.style.normalText);
+            textDescription.setTextAppearance(getContext(), R.style.normalText);
+            textLanguage.setTextAppearance(getContext(), R.style.normalText);
+            textUrl.setTextAppearance(getContext(), R.style.normalText);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }

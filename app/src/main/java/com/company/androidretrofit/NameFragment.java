@@ -30,6 +30,7 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
     private static final String API_KEY = "39f328d281294c998df37ec5b9d04305";
     private NewsAdapter newsAdapter;
     private RestClient restClient = new RestClient();
+    private List<Source> sources;
 
     public NameFragment() {
     }
@@ -73,8 +74,7 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
 
     @Override
     public void onResponse(Call<News> call, Response<News> response) {
-        List<Source> sources = response.body().getSources();
-
+        sources = response.body().getSources();
         newsAdapter = new NewsAdapter(getActivity(), sources, this);
         recyclerView.setAdapter(newsAdapter);
     }
@@ -103,11 +103,6 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
-//        if (item.getItemId() == R.id.zoomIn) {
-//            container.size
-//        } else {
-//            textView.setTextSize(20);
-//        }
         return super.onOptionsItemSelected(item);
     }
 }
