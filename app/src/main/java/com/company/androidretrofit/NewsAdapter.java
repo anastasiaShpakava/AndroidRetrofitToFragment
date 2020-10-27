@@ -38,12 +38,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public void onBindViewHolder(@NonNull final NewsViewHolder holder, int position) {
        final Source source = sources.get(position);
         holder.sourceId.setText(source.getId());
-        holder.sourceDescription.setText(source.getDescription());
-        holder.sourceURL.setText(source.getUrl());
-        holder.sourceCategory.setText(source.getCategory());
-        holder.sourceLanguage.setText(source.getLanguage());
-        holder.sourceCountry.setText(source.getCountry());
-        holder.sourceName.setText(source.getName());
 
         holder.sourceId.setOnClickListener(new View.OnClickListener() {
             @Override
