@@ -61,7 +61,7 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
         NewsFragment newsFragment = new NewsFragment(source);
         newsFragment.setArguments(bundle);
 
-       getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, newsFragment).addToBackStack(null).commit();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, newsFragment).addToBackStack(null).commit();
         Toast.makeText(getActivity(), "Get info", Toast.LENGTH_SHORT).show();
     }
 
@@ -91,10 +91,12 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.night) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        switch (item.getItemId()) {
+            case R.id.night:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            case R.id.day:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,19 +1,9 @@
 package com.company.androidretrofit;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.view.WindowCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-
-import android.os.Build;
 import android.os.Bundle;
 
-import android.view.View;
 import android.widget.Toast;
 
 

@@ -90,27 +90,32 @@ private Source source;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.night) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        switch (item.getItemId()) {
+            case R.id.night:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            case R.id.day:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+            case R.id.zoomIn:
+                textName.setTextAppearance(getContext(), R.style.boldText);
+                textCategory.setTextAppearance(getContext(), R.style.boldText);
+                textCountry.setTextAppearance(getContext(), R.style.boldText);
+                textDescription.setTextAppearance(getContext(), R.style.boldText);
+                textLanguage.setTextAppearance(getContext(), R.style.boldText);
+                textUrl.setTextAppearance(getContext(), R.style.boldText);
+            case R.id.zoomOut:
+                textName.setTextAppearance(getContext(), R.style.normalText);
+                textCategory.setTextAppearance(getContext(), R.style.normalText);
+                textCountry.setTextAppearance(getContext(), R.style.normalText);
+                textDescription.setTextAppearance(getContext(), R.style.normalText);
+                textLanguage.setTextAppearance(getContext(), R.style.normalText);
+                textUrl.setTextAppearance(getContext(), R.style.normalText);
+                break;
         }
 
-        if (item.getItemId() == R.id.zoomIn) {
-            textName.setTextAppearance(getContext(), R.style.boldText);
-            textCategory.setTextAppearance(getContext(), R.style.boldText);
-            textCountry.setTextAppearance(getContext(), R.style.boldText);
-            textDescription.setTextAppearance(getContext(), R.style.boldText);
-            textLanguage.setTextAppearance(getContext(), R.style.boldText);
-            textUrl.setTextAppearance(getContext(), R.style.boldText);
-        } else {
-            textName.setTextAppearance(getContext(), R.style.normalText);
-            textCategory.setTextAppearance(getContext(), R.style.normalText);
-            textCountry.setTextAppearance(getContext(), R.style.normalText);
-            textDescription.setTextAppearance(getContext(), R.style.normalText);
-            textLanguage.setTextAppearance(getContext(), R.style.normalText);
-            textUrl.setTextAppearance(getContext(), R.style.normalText);
-        }
+
+
+
 
         return super.onOptionsItemSelected(item);
     }
