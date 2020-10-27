@@ -2,21 +2,20 @@ package com.company.androidretrofit;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
-  //private RestClient restClient = new RestClient(this);
 
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragmentContainer, new NameFragment())
+                    .commit();
         }
-
-  // restClient.start();
-
     }
 }
