@@ -1,5 +1,7 @@
 package com.company.androidretrofit;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +50,19 @@ public class NewsFragment extends Fragment {
             textCategory.setText(sourceCategory);
             textLanguage.setText(sourceLanguage);
             textCountry.setText(sourceCountry);
+
+            textUrl.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    Uri uri = Uri.parse(sourceUrl);
+                    intent.setData(uri);
+                    startActivity(intent);
+                }
+            });
+
         }
         return view;
     }
+
 }
