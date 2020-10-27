@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,5 +18,11 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.fragmentContainer, new NameFragment())
                     .commit();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(this, "Back", Toast.LENGTH_SHORT);
     }
 }
