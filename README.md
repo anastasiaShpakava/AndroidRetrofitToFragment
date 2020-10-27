@@ -4,3 +4,5 @@
 When click on a specific name, open a fragment where  is a name,  description of the data and a link.
 
 When clicking on the link, open it in the browser.
+
+2.1. Make a switch Night/Day
