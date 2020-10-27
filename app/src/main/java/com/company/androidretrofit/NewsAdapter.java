@@ -39,10 +39,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.sourceId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onTextClick(source.getName(), source.getDescription(), source.getUrl(), source.getCategory(), source.getLanguage(), source.getCountry());
+                listener.onTextClick(source);
             }
         });
-
     }
 
     @Override

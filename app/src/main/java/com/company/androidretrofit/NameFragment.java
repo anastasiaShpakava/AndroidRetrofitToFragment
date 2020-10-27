@@ -54,21 +54,14 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
     }
 
     @Override
-    public void onTextClick(String name, String description, String url, String category, String language, String country) {
-
-        AppCompatActivity activity = (AppCompatActivity) getContext();
+    public void onTextClick(Source source) {
         Bundle bundle = new Bundle();
-        bundle.putString("sourceName", name);
-        bundle.putString("sourceDescription", description);
-        bundle.putString("sourceUrl", url);
-        bundle.putString("sourceCategory", category);
-        bundle.putString("sourceLanguage", language);
-        bundle.putString("sourceCountry", country);
+        bundle.putSerializable("sourceData", source);
 
-        NewsFragment newsFragment = new NewsFragment();
+        NewsFragment newsFragment = new NewsFragment(source);
         newsFragment.setArguments(bundle);
 
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, newsFragment).addToBackStack(null).commit();
+       getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, newsFragment).addToBackStack(null).commit();
         Toast.makeText(getActivity(), "Get info", Toast.LENGTH_SHORT).show();
     }
 

@@ -32,8 +32,12 @@ public class NewsFragment extends Fragment {
     private TextView textCategory;
     private TextView textLanguage;
     private TextView textCountry;
-
+private Source source;
     public NewsFragment() {
+    }
+
+    public NewsFragment(Source source) {
+        this.source = source;
     }
 
     @Nullable
@@ -48,26 +52,22 @@ public class NewsFragment extends Fragment {
         textLanguage = view.findViewById(R.id.sourceLanguage);
         textCountry = view.findViewById(R.id.sourceCountry);
         Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            sourceName = bundle.getString("sourceName");
-            sourceUrl = bundle.getString("sourceUrl");
-            sourceDescription = bundle.getString("sourceDescription");
-            sourceCategory = bundle.getString("sourceCategory");
-            sourceLanguage = bundle.getString("sourceLanguage");
-            sourceCountry = bundle.getString("sourceCountry");
 
-            textName.setText(sourceName);
-            textUrl.setText(sourceUrl);
-            textDescription.setText(sourceDescription);
-            textCategory.setText(sourceCategory);
-            textLanguage.setText(sourceLanguage);
-            textCountry.setText(sourceCountry);
+        if (bundle != null) {
+            bundle.putSerializable("sourceData", source);
+
+            textName.setText(source.getName());
+            textUrl.setText(source.getUrl());
+            textDescription.setText(source.getDescription());
+            textCategory.setText(source.getCategory());
+            textLanguage.setText(source.getLanguage());
+            textCountry.setText(source.getCountry());
 
             textUrl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    Uri uri = Uri.parse(sourceUrl);
+                    Uri uri = Uri.parse(source.getUrl());
                     intent.setData(uri);
                     startActivity(intent);
                 }
