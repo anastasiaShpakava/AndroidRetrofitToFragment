@@ -1,14 +1,9 @@
 package com.company.androidretrofit;
 
-import android.util.Log;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -50,6 +45,5 @@ public class RestClient {
                 .build();
 
         apiInterface = retrofit.create(ApiInterface.class);
-
     }
 }

@@ -9,5 +9,5 @@ public interface ApiInterface {
     @GET("sources")
     Call<News> getNews(
             @Query("apiKey") String apiKey
-            );
+    );
 }

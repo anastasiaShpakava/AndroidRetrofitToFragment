@@ -23,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Toast.makeText(this, "Back", Toast.LENGTH_SHORT);
+        Toast.makeText(this, "Back", Toast.LENGTH_SHORT).show();
     }
 }

@@ -22,7 +22,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-
 public class NameFragment extends Fragment implements OnTextClickListener, Callback<News> {
     private RecyclerView recyclerView;
     private static final String API_KEY = "39f328d281294c998df37ec5b9d04305";
@@ -44,10 +43,12 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
         return view;
 
     }
+
     private void loadJSON() {
         final Call<News> news = restClient.getApiInterface().getNews(API_KEY);
         news.enqueue(this);
     }
+
     @Override
     public void onTextClick(String name, String description, String url, String category, String language, String country) {
 

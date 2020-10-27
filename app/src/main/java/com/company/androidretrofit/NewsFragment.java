@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
-
 public class NewsFragment extends Fragment {
     private String sourceName;
     private String sourceDescription;
@@ -25,6 +24,7 @@ public class NewsFragment extends Fragment {
 
     public NewsFragment() {
     }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -60,9 +60,7 @@ public class NewsFragment extends Fragment {
                     startActivity(intent);
                 }
             });
-
         }
         return view;
     }
-
 }
