@@ -30,26 +30,4 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
         Toast.makeText(this, "Back", Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.my_options_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.night) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-//        if (item.getItemId() == R.id.zoomIn) {
-//            textView.setTextSize(40);
-//        } else {
-//            textView.setTextSize(20);
-//        }
-        return super.onOptionsItemSelected(item);
-    }
 }

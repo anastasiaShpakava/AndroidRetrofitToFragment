@@ -5,4 +5,6 @@ When click on a specific name, open a fragment where  is a name,  description of
 
 When clicking on the link, open it in the browser.
 
-2.1. Make a switch Night/Day
+2.1. Make a switch Night/Day from menu
+
+2.2. Make zoomIn text -zoomOut text from menu
