@@ -82,31 +82,4 @@ public class NewsFragment extends Fragment {
         inflater.inflate(R.menu.my_options_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if (item.getItemId() == R.id.night) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-        if (item.getItemId() == R.id.zoomIn) {
-            textName.setTextAppearance(getContext(), R.style.boldText);
-            textCategory.setTextAppearance(getContext(), R.style.boldText);
-            textCountry.setTextAppearance(getContext(), R.style.boldText);
-            textDescription.setTextAppearance(getContext(), R.style.boldText);
-            textLanguage.setTextAppearance(getContext(), R.style.boldText);
-            textUrl.setTextAppearance(getContext(), R.style.boldText);
-        }
-        if (item.getItemId() == R.id.zoomOut) {
-            textName.setTextAppearance(getContext(), R.style.normalText);
-            textCategory.setTextAppearance(getContext(), R.style.normalText);
-            textCountry.setTextAppearance(getContext(), R.style.normalText);
-            textDescription.setTextAppearance(getContext(), R.style.normalText);
-            textLanguage.setTextAppearance(getContext(), R.style.normalText);
-            textUrl.setTextAppearance(getContext(), R.style.normalText);
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

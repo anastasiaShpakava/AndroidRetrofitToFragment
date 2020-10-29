@@ -77,27 +77,10 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
         Log.d("error", "can't parse data: ", t);
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
+    protected void englishNews(){
+        Toast.makeText(getActivity(),"English news", Toast.LENGTH_LONG).show();
     }
-
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.my_options_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.night:
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            case R.id.day:
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
+    protected void usNews(){
+        Toast.makeText(getActivity(),"USA news", Toast.LENGTH_LONG).show();
     }
 }

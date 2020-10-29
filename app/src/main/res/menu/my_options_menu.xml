@@ -5,25 +5,13 @@
     android:layout_height="wrap_content">
 
     <item
-        android:id="@+id/night"
-        android:icon="@drawable/night"
-        app:showAsAction="withText"
-        android:title="Switch on night" />
-    <item
-        android:id="@+id/day"
-        android:icon="@drawable/day"
-        app:showAsAction="withText"
-        android:title="Switch on day" />
-    <item
-        android:id="@+id/zoomIn"
-        android:icon="@drawable/zoom_in"
-        app:showAsAction="withText"
-        android:title="Zoom in" />
+        android:id="@+id/english_news"
+        android:icon="@drawable/ic_baseline_chrome_reader_mode_24"
+        android:title="English news" />
 
     <item
-        android:id="@+id/zoomOut"
-        android:icon="@drawable/zoom_out"
-        app:showAsAction="withText"
-        android:title="Zoom out" />
+        android:id="@+id/us_news"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="USA news" />
 
 </menu>
