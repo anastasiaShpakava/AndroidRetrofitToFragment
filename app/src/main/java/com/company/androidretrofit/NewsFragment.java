@@ -50,14 +50,14 @@ public class NewsFragment extends Fragment {
         Bundle bundle = getArguments();
         if (bundle != null) {
             final Source source = (Source) bundle.getSerializable("sourceData");
-
-            textName.setText(source.getName());
-            textUrl.setText(source.getUrl());
-            textDescription.setText(source.getDescription());
-            textCategory.setText(source.getCategory());
-            textLanguage.setText(source.getLanguage());
-            textCountry.setText(source.getCountry());
-
+            if (source != null) {
+                textName.setText(source.getName());
+                textUrl.setText(source.getUrl());
+                textDescription.setText(source.getDescription());
+                textCategory.setText(source.getCategory());
+                textLanguage.setText(source.getLanguage());
+                textCountry.setText(source.getCountry());
+            }
             textUrl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -91,6 +91,7 @@ public class NewsFragment extends Fragment {
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+
         if (item.getItemId() == R.id.zoomIn) {
             textName.setTextAppearance(getContext(), R.style.boldText);
             textCategory.setTextAppearance(getContext(), R.style.boldText);
