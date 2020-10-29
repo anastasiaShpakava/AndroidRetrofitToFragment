@@ -58,7 +58,7 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
         Bundle bundle = new Bundle();
         bundle.putSerializable("sourceData", source);
 
-        NewsFragment newsFragment = new NewsFragment(source);
+        NewsFragment newsFragment = new NewsFragment();
         newsFragment.setArguments(bundle);
 
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, newsFragment).addToBackStack(null).commit();
@@ -101,4 +101,3 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
         return super.onOptionsItemSelected(item);
     }
 }
-
