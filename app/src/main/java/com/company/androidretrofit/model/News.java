@@ -1,5 +1,6 @@
-package com.company.androidretrofit;
+package com.company.androidretrofit.model;
 
+import com.company.androidretrofit.model.Source;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
