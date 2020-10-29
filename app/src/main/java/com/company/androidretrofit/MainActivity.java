@@ -2,6 +2,7 @@ package com.company.androidretrofit;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
@@ -30,17 +31,21 @@ public class MainActivity extends AppCompatActivity {
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    NameFragment nameFragment = new NameFragment();
+                    Fragment selectedFragment=null;
                     switch (item.getItemId()){
                         case R.id.english_news:
-                            nameFragment.englishNews();
+                        selectedFragment = new FragmentEnglishNews();
                             break;
 
                         case R.id.us_news:
-                            nameFragment.usNews();
+                          selectedFragment = new FragmentUsNews();
                             break;
+
+                        case R.id.main:
+                            selectedFragment = new NameFragment();
                     }
-                    return false;
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,selectedFragment).commit();
+                    return true;
                 }
             };
 

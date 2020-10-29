@@ -45,7 +45,6 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         return view;
-
     }
 
     private void loadJSON() {
@@ -75,12 +74,5 @@ public class NameFragment extends Fragment implements OnTextClickListener, Callb
     @Override
     public void onFailure(Call<News> call, Throwable t) {
         Log.d("error", "can't parse data: ", t);
-    }
-
-    protected void englishNews(){
-        Toast.makeText(getActivity(),"English news", Toast.LENGTH_LONG).show();
-    }
-    protected void usNews(){
-        Toast.makeText(getActivity(),"USA news", Toast.LENGTH_LONG).show();
     }
 }
