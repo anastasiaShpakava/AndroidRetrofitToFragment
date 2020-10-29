@@ -5,6 +5,15 @@ When click on a specific name, open a fragment where  is a name,  description of
 
 When clicking on the link, open it in the browser.
 
+2.
+
 2.1. Make a switch Night/Day from menu
 
 2.2. Make zoomIn text -zoomOut text from menu
+
+3. Make a navigation bar with two items:
+- English news
+- US News
+When choosing a navigation item, change the name of the screen and in the first case should displayed all English news,
+
+and in the second - only us
