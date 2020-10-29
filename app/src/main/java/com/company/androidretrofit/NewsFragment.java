@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -30,6 +31,7 @@ public class NewsFragment extends Fragment {
     private TextView textLanguage;
     private TextView textCountry;
     private WebView webView;
+    private LinearLayout fragmentLayout;
 
 private Source source;
     public NewsFragment() {
@@ -44,18 +46,17 @@ private Source source;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.details_fragment, container, false);
-
         webView = view.findViewById(R.id.webview);
-        webView.loadUrl(source.getUrl());
 
+        fragmentLayout = view.findViewById(R.id.fragment_layout);
         textName = view.findViewById(R.id.sourceName);
         textUrl = view.findViewById(R.id.sourceURL);
         textDescription = view.findViewById(R.id.sourceDescription);
         textCategory = view.findViewById(R.id.sourceCategory);
         textLanguage = view.findViewById(R.id.sourceLanguage);
         textCountry = view.findViewById(R.id.sourceCountry);
-        Bundle bundle = this.getArguments();
 
+        Bundle bundle = this.getArguments();
         if (bundle != null) {
             bundle.putSerializable("sourceData", source);
 
@@ -69,7 +70,12 @@ private Source source;
             textUrl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    webView.loadUrl(source.getUrl());
+                    // Enable Javascript
+                    webView.getSettings().setJavaScriptEnabled(true);
+                    // Force links and redirects to open in the WebView instead of in a browser
                     webView.setWebViewClient(new WebViewClient());
+                    fragmentLayout.setVisibility(View.GONE);
                 }
             });
         }
