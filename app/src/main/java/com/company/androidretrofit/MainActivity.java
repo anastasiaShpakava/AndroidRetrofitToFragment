@@ -3,7 +3,6 @@ package com.company.androidretrofit;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
 import android.widget.Toast;
 
 
@@ -20,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.fragmentContainer, new NameFragment())
                     .commit();
         }
-
     }
 
     @Override
