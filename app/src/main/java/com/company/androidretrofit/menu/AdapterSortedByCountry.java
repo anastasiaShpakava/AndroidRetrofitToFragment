@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.company.androidretrofit.NewsAdapter;
-import com.company.androidretrofit.OnTextClickListener;
 import com.company.androidretrofit.R;
 import com.company.androidretrofit.model.Source;
 

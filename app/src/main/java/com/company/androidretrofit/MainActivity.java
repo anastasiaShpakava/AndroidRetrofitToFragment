@@ -29,24 +29,25 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment=null;
-                    switch (item.getItemId()){
+                    Fragment selectedFragment = null;
+                    switch (item.getItemId()) {
                         case R.id.english_news:
-                        selectedFragment = new FragmentEnglishNews();
+                            selectedFragment = new FragmentEnglishNews();
                             break;
 
                         case R.id.us_news:
-                          selectedFragment = new FragmentUsNews();
+                            selectedFragment = new FragmentUsNews();
                             break;
 
                         case R.id.main:
                             selectedFragment = new NameFragment();
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,selectedFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                     return true;
                 }
             };
