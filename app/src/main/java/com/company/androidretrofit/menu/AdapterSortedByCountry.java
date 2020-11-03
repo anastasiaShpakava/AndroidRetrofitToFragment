@@ -30,8 +30,6 @@ public class AdapterSortedByCountry extends RecyclerView.Adapter<AdapterSortedBy
         return new AdapterSortedByCountry.MyViewHolder(view);
     }
 
-
-
     @Override
     public void onBindViewHolder(@NonNull final AdapterSortedByCountry.MyViewHolder holder, int position) {
         final Source source = sources.get(position);
