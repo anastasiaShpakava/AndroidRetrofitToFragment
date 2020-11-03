@@ -17,4 +17,4 @@ When clicking on the link, open it in the browser. (main branch)
 - English news
 - US News
 When choosing a navigation item, change the name of the screen and in the first case should displayed all English news,
-and in the second - us news only (add_bottomNavigationView branch )
+and in the second - us news only (add_bottomNavigationView branch)
