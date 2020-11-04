@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.company.androidretrofit.model.Source;
@@ -62,6 +66,47 @@ public class NewsFragment extends Fragment {
             });
         }
         return view;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_top, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.night:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case R.id.day:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+            case R.id.zoomIn:
+                textName.setTextAppearance(getContext(), R.style.boldText);
+                textCategory.setTextAppearance(getContext(), R.style.boldText);
+                textCountry.setTextAppearance(getContext(), R.style.boldText);
+                textDescription.setTextAppearance(getContext(), R.style.boldText);
+                textLanguage.setTextAppearance(getContext(), R.style.boldText);
+                textUrl.setTextAppearance(getContext(), R.style.boldText);
+                break;
+            case R.id.zoomOut:
+                textName.setTextAppearance(getContext(), R.style.normalText);
+                textCategory.setTextAppearance(getContext(), R.style.normalText);
+                textCountry.setTextAppearance(getContext(), R.style.normalText);
+                textDescription.setTextAppearance(getContext(), R.style.normalText);
+                textLanguage.setTextAppearance(getContext(), R.style.normalText);
+                textUrl.setTextAppearance(getContext(), R.style.normalText);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
