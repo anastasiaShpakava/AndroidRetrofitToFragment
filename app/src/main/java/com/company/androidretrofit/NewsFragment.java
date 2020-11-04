@@ -99,6 +99,7 @@ private Source source;
         switch (item.getItemId()) {
             case R.id.night:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
             case R.id.day:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 break;
@@ -109,6 +110,7 @@ private Source source;
                 textDescription.setTextAppearance(getContext(), R.style.boldText);
                 textLanguage.setTextAppearance(getContext(), R.style.boldText);
                 textUrl.setTextAppearance(getContext(), R.style.boldText);
+                break;
             case R.id.zoomOut:
                 textName.setTextAppearance(getContext(), R.style.normalText);
                 textCategory.setTextAppearance(getContext(), R.style.normalText);
