@@ -8,9 +8,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
+
 import android.widget.TextView;
 
 
@@ -20,6 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
+import com.company.androidretrofit.model.Source;
 
 public class NewsFragment extends Fragment {
     private TextView textName;
@@ -31,12 +34,7 @@ public class NewsFragment extends Fragment {
     private WebView webView;
     private LinearLayout fragmentLayout;
 
-private Source source;
     public NewsFragment() {
-    }
-
-    public NewsFragment(Source source) {
-        this.source = source;
     }
 
     @Nullable
@@ -44,9 +42,10 @@ private Source source;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.details_fragment, container, false);
-        webView = view.findViewById(R.id.webview);
 
+        webView = view.findViewById(R.id.webview);
         fragmentLayout = view.findViewById(R.id.fragment_layout);
+
         textName = view.findViewById(R.id.sourceName);
         textUrl = view.findViewById(R.id.sourceURL);
         textDescription = view.findViewById(R.id.sourceDescription);
@@ -54,17 +53,17 @@ private Source source;
         textLanguage = view.findViewById(R.id.sourceLanguage);
         textCountry = view.findViewById(R.id.sourceCountry);
 
-        Bundle bundle = this.getArguments();
+        Bundle bundle = getArguments();
         if (bundle != null) {
-            bundle.putSerializable("sourceData", source);
-
-            textName.setText(source.getName());
-            textUrl.setText(source.getUrl());
-            textDescription.setText(source.getDescription());
-            textCategory.setText(source.getCategory());
-            textLanguage.setText(source.getLanguage());
-            textCountry.setText(source.getCountry());
-
+            final Source source = (Source) bundle.getSerializable("sourceData");
+            if (source != null) {
+                textName.setText(source.getName());
+                textUrl.setText(source.getUrl());
+                textDescription.setText(source.getDescription());
+                textCategory.setText(source.getCategory());
+                textLanguage.setText(source.getLanguage());
+                textCountry.setText(source.getCountry());
+            }
             textUrl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -97,6 +96,7 @@ private Source source;
         switch (item.getItemId()) {
             case R.id.night:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
             case R.id.day:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 break;
@@ -107,6 +107,7 @@ private Source source;
                 textDescription.setTextAppearance(getContext(), R.style.boldText);
                 textLanguage.setTextAppearance(getContext(), R.style.boldText);
                 textUrl.setTextAppearance(getContext(), R.style.boldText);
+                break;
             case R.id.zoomOut:
                 textName.setTextAppearance(getContext(), R.style.normalText);
                 textCategory.setTextAppearance(getContext(), R.style.normalText);

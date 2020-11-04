@@ -1,12 +1,14 @@
-package com.company.androidretrofit;
+package com.company.androidretrofit.model;
+
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class News {
+public class News implements Serializable {
     @SerializedName("status")
     @Expose
     private String status;

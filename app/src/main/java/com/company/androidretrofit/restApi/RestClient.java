@@ -1,6 +1,7 @@
-package com.company.androidretrofit;
+package com.company.androidretrofit.restApi;
 
 
+import com.company.androidretrofit.restApi.ApiInterface;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
