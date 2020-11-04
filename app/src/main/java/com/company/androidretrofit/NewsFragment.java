@@ -118,11 +118,6 @@ private Source source;
                 textUrl.setTextAppearance(getContext(), R.style.normalText);
                 break;
         }
-
-
-
-
-
         return super.onOptionsItemSelected(item);
     }
 }

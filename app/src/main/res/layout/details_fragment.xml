@@ -1,71 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/details_fr"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="WebViewLayout">
+    android:layout_height="wrap_content">
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <LinearLayout
-        android:id="@+id/fragment_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/sourceName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:textSize="20sp"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/sourceDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:textSize="20sp"
-            android:textStyle="normal"  />
-
-        <TextView
-            android:id="@+id/sourceURL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:textSize="20sp"
-            android:textStyle="normal"  />
-
-        <TextView
-            android:id="@+id/sourceCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:textSize="20sp"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/sourceLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:textSize="20sp"
-            android:textStyle="normal"  />
-
-        <TextView
-            android:id="@+id/sourceCountry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:textSize="20sp"
-            android:textStyle="normal"  />
-    </LinearLayout>
+   <include
+       android:layout_height="wrap_content"
+       android:layout_width="wrap_content"
+       layout="@layout/item"/>
 </FrameLayout>

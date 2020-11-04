@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.fragmentContainer, new NameFragment())
                     .commit();
         }
-
     }
 
     @Override
