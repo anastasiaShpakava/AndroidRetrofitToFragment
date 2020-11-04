@@ -1,4 +1,4 @@
-package com.company.androidretrofit;
+package com.company.androidretrofit.reatApi;
 
 
 import com.google.gson.Gson;

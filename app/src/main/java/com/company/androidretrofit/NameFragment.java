@@ -17,6 +17,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.company.androidretrofit.model.News;
+import com.company.androidretrofit.model.Source;
+import com.company.androidretrofit.reatApi.RestClient;
+
 import java.util.List;
 
 import retrofit2.Call;

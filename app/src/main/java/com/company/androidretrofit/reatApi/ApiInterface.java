@@ -1,5 +1,7 @@
-package com.company.androidretrofit;
+package com.company.androidretrofit.reatApi;
 
+
+import com.company.androidretrofit.model.News;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

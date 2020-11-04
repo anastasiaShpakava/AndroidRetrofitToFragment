@@ -18,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
+import com.company.androidretrofit.model.Source;
+
 
 public class NewsFragment extends Fragment {
     private TextView textName;
